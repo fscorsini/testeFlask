@@ -1,12 +1,18 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 #SQLAlchemy é um ORM para gerir o processo de interação com o banco
+from flask_wtf.csrf import CSRFProtect
+from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
 db = SQLAlchemy(app)
-from views import *
+csrf = CSRFProtect(app)
+bcrypt = Bcrypt(app)
+
+from views_game import *
+from views_user import *
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8080, debug = True)

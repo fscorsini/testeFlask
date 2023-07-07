@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  sistema:
+    build: .
+    command: python3 jogoteca.py
+    container_name: jogoteca
+    hostname: jogoteca
+    volumes:
+      - .:/code
+    networks: 
+      - default
+    ports:
+      - 8080:8080
+    environment:
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: usuario
+      DB_PASS: senha
+      DB_NAME: bancojogos
+  banco:
+    container_name: bdjogos
+    hostname: bdjogos
+    volumes:
+      - ./dados:/var/lib/mysql
+    networks: 
+      - default
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: senha
+      MYSQL_DATABASE: bancojogos
+    image: mysql
+networks:
+  default:

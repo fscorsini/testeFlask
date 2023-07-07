@@ -1,0 +1,18 @@
+Flask==2.0.2
+mysql-connector-python==8.0.28
+Flask-SQLAlchemy==2.5.1
+Flask-WTF==1.0.0
+Flask-Bcrypt==0.7.1
+numpy>=1.23
+mysqlclient>=1.4
+reportlab>=3.6
+Pillow>=9.2
+xhtml2pdf>=0.2
+xlrd>=2.0
+pandas>=2.0
+scipy>=1.10
+bs4>=0.0.1
+reportlab>=3.6.12
+xhtml2pdf>=0.2.10
+xlrd>=2.0.1
+#Inserir todas as bibliotecas que foram agregadas no ambiente.
